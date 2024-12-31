@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <title>WikiWorte</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <link rel="stylesheet" href="ref/wikiworte.css"></link>
+</head>
+
+<body id="bdy" style="background: rgb(53, 53, 53); color: rgb(193, 193, 193);">
+    <div class="main section" id="main">
+        <div class="widget HTML" data-version="2" id="HTML11">
+            <div class="widget-content">
+                <div id="loading">
+                    <div class="loader"></div>Einen Moment…
+                </div>
+                <div class="col">
+                    <div class="r1">
+                        <div class="logowrap" style="background-color: rgb(51, 51, 51); color: rgb(209, 209, 209);">
+                            <div class="logo">WikiWorte</div>
+                            <div class="logoextra">
+                                <input type="button" class="btn1" value="?" style="font-size: 25px; background: rgb(51, 51, 51); color: rgb(129, 129, 129); border-color: rgb(137, 137, 137);" onclick="openpop('modal1')">
+                                <input type="button" class="btn1" value="⁈" style="font-size: 25px; background: rgb(51, 51, 51); color: rgb(129, 129, 129); border-color: rgb(137, 137, 137);" onclick="openpop('modal3')">
+                                <input type="button" class="btn1" value="≡" onclick="openpop('modal2')" style="background: rgb(51, 51, 51); color: rgb(129, 129, 129); border-color: rgb(137, 137, 137);">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tries" style="color: rgb(209, 209, 209);"><span>Noch <span id="movesno">20</span> Versuch<span id="plural">e</span></span>
+                    </div>
+                    <div class="r2">
+                        <div class="gamearea" id="gamearea">
+                            <div class="wordarea" id="wordarea">
+                                <div class="stepwrap" id="setwrap">
+                                    <div id="rrr">
+                                        <input type="text" maxlength="1" inputmode="none" onkeydown="return /[a-z]/i.test(event.key)" class="lt a" id="a0">
+                                        <input type="text" maxlength="1" inputmode="none" onkeydown="return /[a-z]/i.test(event.key)" class="lt a" id="a1">
+                                        <input type="text" maxlength="1" inputmode="none" onkeydown="return /[a-z]/i.test(event.key)" class="lt a" id="a2">
+                                        <input type="text" maxlength="1" inputmode="none" onkeydown="return /[a-z]/i.test(event.key)" class="lt a" id="a3">
+                                    </div>
+                                </div>
+                            </div>
+                            <input type="text" style="margin:0px;padding:0px;" id="entered" maxlength="4" inputmode="none" onkeydown="return /[a-z]/i.test(event.key)" oninput="populate()">
+                        </div>
+                    </div>
+                    <div id="keyboard" class="r3">
+                        <div class="keywrap">
+                            <div class="keyarea" id="keyarea">
+                                <div class="keyrow">
+                                    <button id="kq" class="krk" data-key="q">q</button>
+                                    <button id="kw" class="krk" data-key="w">w</button>
+                                    <button id="ke" class="krk" data-key="e">e</button>
+                                    <button id="kr" class="krk" data-key="r">r</button>
+                                    <button id="kt" class="krk" data-key="t">t</button>
+                                    <button id="kz" class="krk" data-key="z">z</button>
+                                    <button id="ku" class="krk" data-key="u">u</button>
+                                    <button id="ki" class="krk" data-key="i">i</button>
+                                    <button id="ko" class="krk" data-key="o">o</button>
+                                    <button id="kp" class="krk" data-key="p">p</button>
+                                </div>
+                                <div class="keyrow">
+                                    <div class="emptybtn"></div>
+                                    <button id="ka" class="krk" data-key="a">a</button>
+                                    <button id="ks" class="krk" data-key="s">s</button>
+                                    <button id="kd" class="krk" data-key="d">d</button>
+                                    <button id="kf" class="krk" data-key="f">f</button>
+                                    <button id="kg" class="krk" data-key="g">g</button>
+                                    <button id="kh" class="krk" data-key="h">h</button>
+                                    <button id="kj" class="krk" data-key="j">j</button>
+                                    <button id="kk" class="krk" data-key="k">k</button>
+                                    <button id="kl" class="krk" data-key="l">l</button>
+                                    <div class="emptybtn"></div>
+                                </div>
+                                <div class="keyrow">
+                                    <button data-key="enter" class="widebtn krk">Enter</button>
+                                    <button id="ky" class="krk" data-key="y">y</button>
+                                    <button id="kx" class="krk" data-key="x">x</button>
+                                    <button id="kc" class="krk" data-key="c">c</button>
+                                    <button id="kv" class="krk" data-key="v">v</button>
+                                    <button id="kb" class="krk" data-key="b">b</button>
+                                    <button id="kn" class="krk" data-key="n">n</button>
+                                    <button id="km" class="krk" data-key="m">m</button>
+                                    <button data-key="backspace" class="widebtn krk">Del</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Button 1: ? Instructions -->
+                <div id="modal1" class="modal">
+                    <div class="modal-content" style="background-color: rgb(53, 53, 53); color: rgb(193, 193, 193);">
+                        <div class="modal-header">
+                            <span class="close" onclick="hideModal()">×</span>
+                            <h2>So wird gespielt</h2>
+                        </div>
+                        <div class="modal-body">
+                            <div class="notice">Dark Mode ist in den Einstellungen verfügbar.</div>
+                            <p>Finde die Worte mit 4, 5, 6 und 7 Buchstaben in 20 Versuchen. Die Worte sind zufällig gewählt und haben nichts miteinander zu tun.</p>
+                            <p>Jeder Versuch muss ein gültiges Wort sein (Ä=AE, Ö=OE, Ü=UE, ß=SS), alle grammatikalischen Formen können vorkommen. Bestätige dein Wort mit [ENTER].</p>
+                            <p>Du beginnst mit vier Buchstaben und immer wenn eines gefunden hast, steigt die Anzahl der Buchstaben um 1.</p>
+                            <p>Wenn ein gültiges Wort eingegeben wurde, zeigen die Farben wie dicht dran du warst. Zum Beispiel:</p>
+                            <p style="text-align: center;">
+                                <input type="text" class="lt2" value="P" style="background:#90EE90;margin-right:0px;">
+                                <input type="text" class="lt2" value="R" style="background:#c1c1c1;margin-right:0px;">
+                                <input type="text" class="lt2" value="I" style="background:#c1c1c1;margin-right:0px;">
+                                <input type="text" class="lt2" value="M" style="background:gold;margin-right:0px;">
+                                <input type="text" class="lt2" value="E" style="background:#c1c1c1;margin-right:0px;">
+                            </p>
+                            <table style="margin-left: auto; margin-right: auto;">
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <input type="text" class="lt2" value="P" style="background:#90EE90;"></td>
+                                        <td>- Im Wort und an der richtigen Position</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <input type="text" class="lt2" value="M" style="background:gold;"></td>
+                                        <td>- Im Wort aber an anderer Position</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <input type="text" class="lt2" value="R" style="background:#c1c1c1;"></td>
+                                        <td>- Kommt nicht im Wort vor</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <p>Du kannst WikiWorte einmal am Tag spielen, um Mitternacht gibt es neue Worte.</p>
+                            <p>Tipp: Es kann hilfreich sein, möglichst viele Buchstaben zu betrachten, auch wenn einzelne schon bekannt sind. Geeignete Worte mit den am häufigsten vorkommenden Buchstaben sind:<br> 4: EINS, HART, GOLD, MUCK<br> 5: ARIEN,
+                                STUHL, COMBO<br> 6: SANIER, MULCHT, GROOVY<br> 7: INSERAT, LOGBUCH
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Button 3: ≡ Settings -->
+                <div id="modal2" class="modal">
+                    <div class="modal-content" style="background-color: rgb(53, 53, 53); color: rgb(193, 193, 193);">
+                        <div class="modal-header">
+                            <span class="close" onclick="hideModal()">×</span>
+                            <h2>Über / Einstellungen</h2>
+                        </div>
+                        <div class="modal-body">
+                            <div class="graphs" style="background-color: rgb(65, 65, 65); color: rgb(193, 193, 193);">
+                                <h3>Kontakt</h3>
+                                <p>Stepdle idea by Sachin Giri</p>
+                                <p>If you would like to support Sachin you can <a style="color:green" href="https://www.buymeacoffee.com/sachingiri">Buy Sachin a Coffee</a></p>
+                                <p>Find more info on <a href="https://www.stepdle.com/">stepdle.com</a>.</p>
+                                <p>&#xA0;</p>
+                                <p><b>WikiWorte</b> mit einer sehr umfangreichen Wortliste von Michael Müller-Hillebrand.</p>
+                                <p>Die gesuchten Worte stammen aus den Wikipedia-Dumps der <a href="https://www.wortschatz.uni-leipzig.de/de/download">Universität Leipzig</a> © 2023 Universität Leipzig / Sächsische Akademie der Wissenschaften / InfAI.</p>
+                            </div>
+                            <div class="graphs" style="background-color: rgb(65, 65, 65); color: rgb(193, 193, 193);">
+                                <h3>Dark Mode</h3>
+                                <label class="switch">
+                                    <input type="checkbox" id="chkPassport" onclick="ShowHideDiv()">
+                                    <span class="slider round"></span>
+                                </label>
+                            </div>
+                            <div class="graphs" style="background-color: rgb(65, 65, 65); color: rgb(193, 193, 193);">
+                                <h3>Reset</h3>
+                                <p>
+                                    <button class="btn2" onclick="localStorage.clear();window.location.reload();" style="background-color: rgb(120, 120, 120); color: black;">Alle lokalen Daten löschen</button>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Button 3: ?! Result -->
+                <div id="modal3" class="modal">
+                    <div class="modal-content" style="padding-bottom: 5px; background-color: rgb(53, 53, 53); color: rgb(193, 193, 193);">
+                        <div class="modal-header">
+                            <span class="close" onclick="hideModal()">×</span>
+                            <h2>WikiWorte #<span id="stepno">1</span></h2>
+                        </div>
+                        <div class="modal-body" style="text-align:center;">
+                            <div id="popupStats" class="graphs" style="padding-bottom: 10px; background-color: rgb(65, 65, 65); color: rgb(193, 193, 193);">
+                                <h3>Statistik</h3>
+                                <table class="GeneratedTable">
+                                    <tbody>
+                                        <tr>
+                                            <td>Level 4</td>
+                                            <td>
+                                                <div class="ggg" id="hax4"></div><span id="hax4v">13</span>
+                                            </td>
+                                            <td class="btn3">
+                                                <button class="btn3" onclick="share(4)"><img src="./ref/shares.png" height="16px" style="opacity:0.6;position: relative;top:2px;"></button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Level 5</td>
+                                            <td>
+                                                <div class="ggg" id="hax5"></div><span id="hax5v">13</span>
+                                            </td>
+                                            <td class="btn3">
+                                                <button class="btn3" onclick="share(5)"><img src="./ref/shares.png" height="16px" style="opacity:0.6;position: relative;top:2px;"></button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Level 6</td>
+                                            <td>
+                                                <div class="ggg" id="hax6"></div><span id="hax6v">13</span>
+                                            </td>
+                                            <td class="btn3">
+                                                <button class="btn3" onclick="share(6)"><img src="./ref/shares.png" height="16px" style="opacity:0.6;position: relative;top:2px;"></button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Level 7</td>
+                                            <td>
+                                                <div class="ggg" id="hax7"></div><span id="hax7v">13</span>
+                                            </td>
+                                            <td class="btn3">
+                                                <button class="btn3" onclick="share(7)"><img src="./ref/shares.png" height="16px" style="opacity:0.6;position: relative;top:2px;"></button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div id="popupShare" class="graphs" style="background-color: rgb(65, 65, 65); color: rgb(193, 193, 193);">
+                                <h3>Teilen</h3>
+                                <textarea id="sharecontent" class="shrcntn" inputmode="none" readonly=""></textarea>
+                                <input type="button" class="btn2" id="copy11" value="Kopieren" onclick="copythat()" style="margin-right: 10px; padding: 7px 7px 5px; background-color: rgb(120, 120, 120); color: black;">
+                                <button class="btn2" onclick="share()" style="background-color: rgb(120, 120, 120); color: black;">Teilen <img src="./ref/shares.png" height="16px" style="opacity:0.6;position: relative;top:3px;"></button>
+                            </div>
+
+                            <div id="popupSolution" class="graphs" style="background-color: rgb(65, 65, 65); color: rgb(193, 193, 193);">
+                                <h3>Lösung</h3>
+                                <div style="min-height:110px;">
+                                    <div id="wlist"><br>Bitte das Spiel erst beenden.</div>
+                                </div>
+                                <input type="button" class="btn2" style="padding: 7px 7px 5px; background-color: rgb(120, 120, 120); color: black;" onclick="showwlist()" value="Worte anzeigen">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <script src="ref/wikiworte.js"></script>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+</body>
+
+</html>
