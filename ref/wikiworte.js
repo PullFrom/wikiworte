@@ -1,7 +1,7 @@
 
 var isDarkMode = false;
 var ttt = new Date();
-var stdate1 = new Date("03/08/2025");
+var stdate1 = new Date("03/14/2025");
 var stdate2 = new Date(((ttt.getMonth() + 1) + '/' + ttt.getDate() + '/' + ttt.getFullYear()).toString());
 var differenceInTime = stdate2.getTime() - stdate1.getTime();
 var daysSinceStart = Math.round(differenceInTime / (1000 * 3600 * 24));
