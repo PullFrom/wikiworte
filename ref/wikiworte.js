@@ -460,10 +460,13 @@ function copythat() {
 	var x = document.querySelector('.shrcntn');
 	x.focus();
 	x.select();
-	try {
-		var successful = document.execCommand('copy');
-		var msg = successful ? 'successful' : 'unsuccessful';
-	} catch (err) {}
+	navigator.clipboard.writeText(x.value || x.innerText)
+    .then(() => {
+        console.log('Text copied to clipboard successfully!');
+    })
+    .catch(err => {
+        console.error('Failed to copy text: ', err);
+    });
 	document.getElementById("sharecontent").blur();
 	share2();
 	btnchg();
