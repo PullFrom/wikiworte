@@ -434,13 +434,13 @@ function share(which) {
 }
 
 function copythat() {
-	var wfour = 0;
-	var wfive = 0;
-	var wsix = 0;
-	var wseven = 0;
-	var sum = 0;
+	let wfour = 0;
+	let wfive = 0;
+	let wsix = 0;
+	let wseven = 0;
+	let sum = 0;
 	for (let i = 0; i < alpha.length; i++) {
-		x = document.querySelectorAll('.' + alpha[i].toString()).length;
+		let x = document.querySelectorAll('.' + alpha[i].toString()).length;
 		if (x == 4) {
 			wfour = wfour + 1
 		} else if (x == 5) {
@@ -452,21 +452,19 @@ function copythat() {
 		} else {}
 	}
 	sum = wfour + wfive + wsix + wseven;
-	var p = document.getElementById("sharecontent").innerHTML;
-	document.getElementById("sharecontent").innerHTML = "WikiWorte #" + gameNumber + "\n" +
-		"Versuche: " + sum + "\n" +
-	//	"4-" + wfour + " 5-" + wfive + " 6-" + wsix + " 7-" + wseven + "\n" +
-		p + "\n" + "#wikiworte\n"; // + window.location.href + "\n";
-	var x = document.querySelector('.shrcntn');
-	x.focus();
-	x.select();
-	navigator.clipboard.writeText(x.value || x.innerText)
-    .then(() => {
-        console.log('Text copied to clipboard successfully!');
-    })
-    .catch(err => {
-        console.error('Failed to copy text: ', err);
-    });
+	let p = document.getElementById("sharecontent").textContent;
+	document.getElementById("sharecontent").textContent = "WikiWorte #" + gameNumber + "\n"
+	 + "Versuche: " + sum + "\n" 
+	 + p + "\n"
+	 + "#wikiworte\n" 
+	 + window.location.href + "\n";
+	var txtarea = document.querySelector('.shrcntn');
+	txtarea.focus();
+	txtarea.select();
+	navigator.clipboard.writeText(txtarea.value)
+		.then().catch(err => {
+			console.error('Failed to copy text: ', err);
+		});
 	document.getElementById("sharecontent").blur();
 	share2();
 	btnchg();
