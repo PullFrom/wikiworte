@@ -454,7 +454,7 @@ function copythat() {
 	sum = wfour + wfive + wsix + wseven;
 	let p = document.getElementById("sharecontent").textContent;
 	document.getElementById("sharecontent").textContent = "WikiWorte #" + gameNumber + "\n"
-	 + "Versuche: " + sum + "\n" 
+	 + "Versuche: " + sum + " (" + [wfour,wfive,wsix,wseven].join("-") + ")\n" 
 	 + p + "\n"
 	 + "#wikiworte\n" 
 	 + window.location.href + "\n";
