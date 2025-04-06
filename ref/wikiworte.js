@@ -341,11 +341,11 @@ function populatewords() {
 
 function populategraphs() {
 	var x;
-	var wfour = 0;
-	var wfive = 0;
-	var wsix = 0;
-	var wseven = 0;
-	var max = 0;
+	var wfour = 0;  // 4 letters tries
+	var wfive = 0;  // 5 letters tries
+	var wsix = 0;   // 6 letters tries
+	var wseven = 0; // 7 letters tries
+	var max = 0;    // max tries
 	for (let i = 0; i < alpha.length; i++) {
 		x = document.querySelectorAll('.' + alpha[i].toString()).length;
 		if (x == 4) {
@@ -390,11 +390,11 @@ function largest(a, b, c, d) {
 }
 
 function share(which) {
-	var wfour = 0;
-	var wfive = 0;
-	var wsix = 0;
-	var wseven = 0;
-	var sum = 0;
+	var wfour = 0; // 4 letters tries
+	var wfive = 0; // 5 letters tries
+	var wsix = 0;  // 6 letters tries
+	var wseven = 0; // 7 letters tries
+	var sum = 0;   // total tries
 	for (let i = 0; i < alpha.length; i++) {
 		x = document.querySelectorAll('.' + alpha[i].toString()).length;
 		if (x == 4) {
@@ -407,7 +407,7 @@ function share(which) {
 			wseven = wseven + 1
 		} else {}
 	}
-	sum = wfour + wfive + wsix + wseven;
+	sum = wfour + wfive + wsix + wseven; // total tries
 	var p = document.getElementById("sharecontent").innerHTML;
 	if (which != null) {
 		var pLines = p.split("\n");
@@ -419,10 +419,9 @@ function share(which) {
 		}
 		p = pGoodLines.join("\n");
 	}
-	x = "WikiWorte #" + gameNumber + "\n" +
-		"Versuche: " + sum + "\n" +
-	//	"4-" + wfour + " 5-" + wfive + " 6-" + wsix + " 7-" + wseven + "\n" +
-		p + "\n" + "#wikiworte\n";
+	x = "WikiWorte #" + gameNumber + "\n"
+		+ "Versuche: " + sum + " (" + [wfour,wfive,wsix,wseven].join("-") + ")\n" 
+		+ p + "\n" + "#wikiworte\n";
 	if (navigator.share) {
 		navigator.share({
 				url: window.location.href,
@@ -434,11 +433,11 @@ function share(which) {
 }
 
 function copythat() {
-	let wfour = 0;
-	let wfive = 0;
-	let wsix = 0;
-	let wseven = 0;
-	let sum = 0;
+	let wfour = 0;  // 4 letters tries
+	let wfive = 0;  // 5 letters tries
+	let wsix = 0;   // 6 letters tries
+	let wseven = 0; // 7 letters tries
+	let sum = 0;    // total tries
 	for (let i = 0; i < alpha.length; i++) {
 		let x = document.querySelectorAll('.' + alpha[i].toString()).length;
 		if (x == 4) {
