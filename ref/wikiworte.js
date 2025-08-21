@@ -319,14 +319,6 @@ function getcol(x) {
 	return window.getComputedStyle(document.getElementById(x)).backgroundColor;
 }
 
-function showwlist() {
-	document.getElementById('wlist').style.display = 'block';
-}
-
-// function hidelist() {
-// 	document.getElementById('wlist').style.display = 'none';
-// }
-
 function populatewords() {
 	if (gameover) {
 		var x = "";
