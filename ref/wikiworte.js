@@ -350,6 +350,16 @@ function populategraphs() {
 			wseven = wseven + 1
 		} else {}
 	}
+	// im laufenden Spiel ist der Zähler immer um 1 zu hoch
+	if (!gameover) {
+		if (wseven == 0 && wsix > 0) {
+			wsix = wsix - 1;
+		} else if (wsix == 0 && wfive > 0) {
+			wfive = wfive - 1;
+		} else if (wfive == 0 && wfour > 0) {
+			wfour = wfour - 1;
+		} else {}
+	}
 	max = largest(wfour, wfive, wsix, wseven);
 	document.getElementById('hax4').style.width = wfour / (max) * 75 + "%";
 	document.getElementById('hax5').style.width = wfive / (max) * 75 + "%";
@@ -375,6 +385,8 @@ function populategraphs() {
 		document.getElementById('hax7').style.width = "0px";
 		document.getElementById('hax7v').innerHTML = "";
 	} else {}
+	var sum = wfour + wfive + wsix + wseven;
+	document.getElementById('stepCount').innerHTML = sum;
 }
 
 function largest(a, b, c, d) {
@@ -413,7 +425,6 @@ function share(which) {
 	}
 	x = "WikiWorte #" + gameNumber + "\n" +
 		"Versuche: " + sum + "\n" +
-	//	"4-" + wfour + " 5-" + wfive + " 6-" + wsix + " 7-" + wseven + "\n" +
 		p + "\n" + "#wikiworte\n";
 	if (navigator.share) {
 		navigator.share({
